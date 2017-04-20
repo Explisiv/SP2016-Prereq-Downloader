@@ -31,22 +31,23 @@
 # CONFIGURATION BLOCK
 
 # Configure the folders to which updates and prerequisites are saved.
-# These folders must already exist - the script does not create them.
+# These folders must exist - the script does create them.
 
 # The top-level folder in the installation folder tree
 $RootFolder = "C:\SharePointInstall"
+NEW-ITEM -ITEM-TYPE DIRECTORY -FORCE -PATH $ROOTFOLDER 
 
 # The folder for prerequisites installed before the Prerequisite Installer
 # There are a number of updates to Windows Server 2012 R2 that must be installed
 # before SharePoint Server 2016's Prerequisite Installer can be run
 $Prereqs1Folder = "$RootFolder\SharePoint_Prerequisites\Windows_Server_2012_R2_Updates"
-
+NEW-ITEM -ITEM-TYPE DIRECTORY -FORCE -PATH $Prereqs1Folder
 # The folder for prerequisites used by the Prerequisite Installer
 $Prereqs2Folder = "$RootFolder\SharePoint_Prerequisites\PrerequisiteInstaller"
-
+NEW-ITEM -ITEM-TYPE DIRECTORY -FORCE -PATH $Prereqs2Folder
 # The folder for updates that are required only in certain scenarios
 $Prereqs3Folder = "$RootFolder\SharePoint_Prerequisites\Additional_Updates"
-
+NEW-ITEM -ITEM-TYPE DIRECTORY -FORCE -PATH $Prereqs2Folder
 # END CONFIGURATION BLOCK
 # -----------------------
 
